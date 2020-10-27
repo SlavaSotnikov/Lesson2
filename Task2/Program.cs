@@ -9,7 +9,7 @@ namespace Task2
             Converter convert = new Converter("eur", 33.7013, "uah");
 
             convert.ToUAH(100);
-            convert.ToCurrency(1000);
+            convert.ToCurrency(100);
 
             Console.ReadLine();
         }

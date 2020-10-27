@@ -5,8 +5,7 @@ namespace Task2
     class Converter
     {
         public string currencyIn, currencyOut;
-        double exchangeRate;
-        double rate;
+        readonly double exchangeRate;
 
         public Converter(string currencyIn, double exchangeRate, string currencyOut)
         {

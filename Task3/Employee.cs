@@ -4,8 +4,7 @@ namespace Task3
 {
     class Employee
     {
-        public string name;
-        public string surname;
+        public string name, surname;
         readonly int workerSalary = 1000;
         readonly int engineerSalary = 2000;
         readonly int managerSalary = 3000;

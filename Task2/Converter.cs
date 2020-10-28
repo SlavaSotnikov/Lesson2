@@ -15,11 +15,11 @@ namespace Task2
         }
         public void ToUAH(double amount)
         {
-            Console.WriteLine($"{amount * exchangeRate} {currencyOut}");
+            Console.WriteLine($"{amount * exchangeRate} {currencyOut}.");
         }
         public void ToCurrency(double amount)
         {
-            Console.WriteLine($"{amount / exchangeRate} {currencyIn}");
+            Console.WriteLine($"{amount / exchangeRate} {currencyIn}.");
         }
     }
 }

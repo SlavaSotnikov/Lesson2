@@ -15,7 +15,7 @@ namespace Task0
                 Surname = "Sotnikov"
             };
             Console.WriteLine($"Date: {user.dateTime}, Age: {user.Age}, " +
-                $"Login: {user.Login}, Name: {user.Name} {user.Surname}");
+                $"Login: {user.Login}, Name: {user.Name} {user.Surname}.");
             Console.ReadLine();
         }
     }

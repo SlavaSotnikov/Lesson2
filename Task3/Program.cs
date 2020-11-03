@@ -6,9 +6,12 @@ namespace Task3
     {
         static void Main()
         {
-            Employee employee = new Employee("Alaisy", "Magarych");
+            Employee employee = new Employee("Alaisy", "Magarych");                        
+            employee.Post = "engineer";
+            employee.Experience = 4;
 
-            employee.CalculateSalary("manager", 5); 
+            Console.WriteLine($"{employee.Name} {employee.Surname} {employee.Post.ToUpper()}");
+            employee.ShowSalary();
 
             Console.ReadLine();
         }

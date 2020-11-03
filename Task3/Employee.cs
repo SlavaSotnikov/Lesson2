@@ -4,46 +4,50 @@ namespace Task3
 {
     class Employee
     {
-        string name, surname;
+        readonly string name, surname;
+        public string Name { get; }
+        public string Surname { get; }
+        public string Post { get; set; }
+        public byte Experience { get; set; }
         public Employee(string name, string surname)
         {
-            this.name = name;
-            this.surname = surname;
+            Name = name;
+            Surname = surname;
         }
-        public int CalculateTax(Salary.position)
+        public int CalculateTax(int salary)
         {
-            return Salary.position * 18 / 100;
+            return salary * 18 / 100;
+        }
+        int CalculateSalary(int salary)
+        {
+            if (Experience < 5)
+                return salary + salary * 10 / 100;
+            else if (5 <= Experience && Experience < 10)
+                return salary + salary * 20 / 100;
+            else
+                return salary + salary * 30 / 100;
         }
         /*Employee's bonuses:
          * < 5 years experience - 10%
          * of 5 to 10 years     - 20%
          * more then 10 years   - 30%
-        */
-        private int CalculateSalary(int experience, string position)
+        */                
+        public void ShowSalary()
         {
-            if (experience < 5)
-                return (Salary.position + Salary.position * 10 / 100);
-            else if (5 <= experience && experience < 10)
-                return (Salary.position + Salary.position * 20 / 100);
-            else
-                return (Salary.position + Salary.position * 30 / 100);
-        }
-        
-        public void CalculateSalary(string position, int experience)
-        {
-            switch (position)
+            int salary;
+            switch (Post)
             {
-                case "worker":                    
-                    Console.WriteLine($"Position: {position}, Salary: {CalculateSalary(experience, position)}, " +
-                        $"Tax: {CalculateTax(CalculateSalary(experience, position))}.");
+                case "worker":
+                    salary = Salary.worker;
+                    Console.WriteLine("Salary: {0}, Tax: {1}", CalculateSalary(salary), CalculateTax(salary));
                     break;
                 case "engineer":
-                    Console.WriteLine($"Position: {position}, Salary: {CalculateSalary(experience, position)}, " +
-                        $"Tax: {CalculateTax(CalculateSalary(experience, position))}.");
+                    salary = Salary.engineer;
+                    Console.WriteLine("Salary: {0}, Tax: {1}", CalculateSalary(salary), CalculateTax(salary));
                     break;
                 case "manager":
-                    Console.WriteLine($"Position: {position}, Salary: {CalculateSalary(experience, position)}, " +
-                        $"Tax: {CalculateTax(CalculateSalary(experience, position))}.");
+                    salary = Salary.manager;
+                    Console.WriteLine("Salary: {0}, Tax: {1}", CalculateSalary(salary), CalculateTax(salary));
                     break;
             }
         }

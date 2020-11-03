@@ -26,11 +26,12 @@ namespace Task3
             else
                 return salary + salary * 30 / 100;
         }
-        /*Employee's bonuses:
+        /*
+         * Employee's bonuses:
          * < 5 years experience - 10%
          * of 5 to 10 years     - 20%
-         * more then 10 years   - 30%
-        */                
+         * more then 10 years   - 30% 
+        */
         public void ShowSalary()
         {
             int salary;

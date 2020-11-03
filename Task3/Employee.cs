@@ -4,7 +4,6 @@ namespace Task3
 {
     class Employee
     {
-        readonly string name, surname;
         public string Name { get; }
         public string Surname { get; }
         public string Post { get; set; }

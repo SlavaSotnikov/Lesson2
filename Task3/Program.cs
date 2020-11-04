@@ -9,7 +9,7 @@ namespace Task3
             Employee employee = new Employee("Alaisy", "Magarych")
             {
                 Post = "engineer",
-                Experience = 4  //years
+                Experience = 4  //years.
             };
 
             Console.WriteLine($"{employee.Name} {employee.Surname} {employee.Post.ToUpper()}");

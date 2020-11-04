@@ -4,6 +4,14 @@ namespace Task3
 {
     class Employee
     {
+        // Employee's bonuses:
+        const byte bonus1 = 10; // < 5 years experience - 10%
+        const byte bonus2 = 20; // of 5 to 10 years     - 20%
+        const byte bonus3 = 30; // more then 10 years   - 30%
+        
+        const byte tax = 18;    // tax index
+        const byte index = 100; // percent index
+
         public string Name { get; }
         public string Surname { get; }
         public string Post { get; set; }
@@ -15,23 +23,18 @@ namespace Task3
         }
         public int CalculateTax(int salary)
         {
-            return salary * 18 / 100;
+            return salary * tax / index;
         }
         int CalculateSalary(int salary)
         {
             if (Experience < 5)
-                return salary + salary * 10 / 100;
+                return salary + salary * bonus1 / index;
             else if (5 <= Experience && Experience < 10)
-                return salary + salary * 20 / 100;
+                return salary + salary * bonus2 / index;
             else
-                return salary + salary * 30 / 100;
+                return salary + salary * bonus3 / index;
         }
-        /*
-         * Employee's bonuses:
-         * < 5 years experience - 10%
-         * of 5 to 10 years     - 20%
-         * more then 10 years   - 30% 
-        */
+        
         public void ShowSalary()
         {
             int salary;
@@ -39,17 +42,21 @@ namespace Task3
             {
                 case "worker":
                     salary = Salary.worker;
-                    Console.WriteLine("Salary: {0}, Tax: {1}", CalculateSalary(salary), CalculateTax(salary));
+                    ShowConsol(salary);
                     break;
                 case "engineer":
                     salary = Salary.engineer;
-                    Console.WriteLine("Salary: {0}, Tax: {1}", CalculateSalary(salary), CalculateTax(salary));
+                    ShowConsol(salary);
                     break;
                 case "manager":
                     salary = Salary.manager;
-                    Console.WriteLine("Salary: {0}, Tax: {1}", CalculateSalary(salary), CalculateTax(salary));
+                    ShowConsol(salary);
                     break;
             }
+        }
+        void ShowConsol(int salary)
+        {
+            Console.WriteLine("Salary: {0}, Tax: {1}", CalculateSalary(salary), CalculateTax(salary));
         }
     }
 }

@@ -5,15 +5,15 @@ namespace Task4
     {
         public static int FindOutPrice(string article)
         {
-            int cost;
+            int price;
             switch (article)
             {
                 case "iPhone":
-                    return cost = 3000;
+                    return price = 3000;
                 case "Samsung":
-                    return cost = 2000;
+                    return price = 2000;
                 case "Huawei":
-                    return cost = 1000;
+                    return price = 1000;
                 
             }
             return 0;

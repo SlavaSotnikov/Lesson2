@@ -2,12 +2,13 @@
 
 namespace Task4
 {
-    class Invoice
+    public class Invoice
     {
         readonly public string customer, provider;
         readonly public int account;
-        readonly int quantity = 1;
         const byte nds = 20;  //NDS tax in Ukraine.
+        public byte Quantity { get; set; }
+        public string Article { get; set; }        
         public Invoice(int account, string customer, string provider)
         {
             this.account = account;
@@ -16,25 +17,27 @@ namespace Task4
         }
         int CalculateNDS()
         {
-            return Storage.price * nds / 100;
+            return Storage.FindOutPrice(Article) * nds / 100;
         }
 
         int CalculatePriceNDS()
         {
-            return Storage.price * quantity + CalculateNDS();
+            return Storage.FindOutPrice(Article) * Quantity + CalculateNDS();
         }
         int CalculatePrice()
         {
-            return Storage.price * quantity;
+            return Storage.FindOutPrice(Article) * Quantity;
         }
 
         public void ShowPriceNDS()
         {
-            Console.WriteLine($"Your order: {Storage.label}. Quantity: {quantity}. Total: {CalculatePriceNDS()}.");
+            Console.WriteLine($"Your order: {Storage.FindOutPrice(Article)}. " +
+                $"Quantity: {Quantity}. Total: {CalculatePriceNDS()}.");
         }
         public void ShowPrice()
         {
-            Console.WriteLine($"Your order: {Storage.label}. Quantity: {quantity}. Total no NDS: {CalculatePrice()}.");
+            Console.WriteLine($"Your order: {Storage.FindOutPrice(Article)}. " +
+                $"Quantity: {Quantity}. Total no NDS: {CalculatePrice()}.");
         }
     }
 }

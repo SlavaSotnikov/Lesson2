@@ -12,7 +12,7 @@ namespace Task4
                 Quantity = 3
             };
             
-            Console.WriteLine($"Customer: {invoice.customer}, {invoice.account}. Provider: {invoice.provider}");
+            Console.WriteLine($"Customer: {invoice.customer}, {invoice.account}. Provider: {invoice.provider}.");
             invoice.ShowPriceNDS();
 
             Console.ReadLine();

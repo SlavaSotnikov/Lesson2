@@ -6,7 +6,7 @@ namespace Task4
     {
         readonly public string customer, provider;
         readonly public int account;
-        const byte nds = 20;  //NDS tax in Ukraine.
+        const byte NDS = 20;  //NDS tax in Ukraine.
         public byte Quantity { get; set; }
         public string Article { get; set; }        
         public Invoice(int account, string customer, string provider)
@@ -17,7 +17,7 @@ namespace Task4
         }
         int CalculateNDS()
         {
-            return Storage.FindOutPrice(Article) * nds / 100;
+            return Storage.FindOutPrice(Article) * NDS / 100;
         }
 
         int CalculatePriceNDS()

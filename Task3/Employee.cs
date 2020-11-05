@@ -10,7 +10,6 @@ namespace Task3
         const byte bonus3 = 30; // more then 10 years   - 30%
         
         const byte tax = 18;    // tax index
-        const byte index = 100; // percent index
 
         public string Name { get; }
         public string Surname { get; }
@@ -23,16 +22,16 @@ namespace Task3
         }
         public int CalculateTax(int salary)
         {
-            return salary * tax / index;
+            return salary * tax / 100;
         }
         int CalculateSalary(int salary)
         {
             if (Experience < 5)
-                return salary + salary * bonus1 / index;
+                return salary + salary * bonus1 / 100;
             else if (5 <= Experience && Experience < 10)
-                return salary + salary * bonus2 / index;
+                return salary + salary * bonus2 / 100;
             else
-                return salary + salary * bonus3 / index;
+                return salary + salary * bonus3 / 100;
         }
         
         public void ShowSalary()

@@ -18,16 +18,16 @@ namespace Task4
 
         private int CalculateVAT()
         {
-            return Storage.FindPrice(Article) * VAT/ 100;
+            return int.Parse(Storage.FindPrice(Article)) * VAT/ 100;
         }
 
         public int CalculatePriceVAT()
         {
-            return Storage.FindPrice(Article) * Quantity + CalculateVAT();
+            return int.Parse(Storage.FindPrice(Article)) * Quantity + CalculateVAT();
         }
         public int CalculatePrice()
         {
-            return Storage.FindPrice(Article) * Quantity;
+            return int.Parse(Storage.FindPrice(Article)) * Quantity;
         }
 
 

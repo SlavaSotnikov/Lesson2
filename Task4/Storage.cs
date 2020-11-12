@@ -3,20 +3,20 @@ namespace Task4
 {
     public class Storage
     {
-        public static int FindPrice(string article)
+        public static string FindPrice(string article)
         {
-            int price;
+            string price;
             switch (article)
             {
                 case "iPhone":
-                    return price = 3000;
+                    return price = "3000";
                 case "Samsung":
-                    return price = 2000;
+                    return price = "2000";
                 case "Huawei":
-                    return price = 1000;
+                    return price = "1000";
                 
             }
-            return 0;
+            return "Unknown device.";
         }
     }
 }

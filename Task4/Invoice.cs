@@ -6,8 +6,8 @@ namespace Task4
     {
         readonly public string customer, provider;
         readonly public int account;
-        const byte NDS = 20;  //NDS tax in Ukraine.
-        public byte Quantity { get; set; }
+        const int VAT = 20;  //VAT in Ukraine.
+        public int Quantity { get; set; }
         public string Article { get; set; }        
         public Invoice(int account, string customer, string provider)
         {
@@ -15,29 +15,34 @@ namespace Task4
             this.customer = customer;
             this.provider = provider;
         }
-        int CalculateNDS()
+
+        private int CalculateVAT()
         {
-            return Storage.FindOutPrice(Article) * NDS / 100;
+            return Storage.FindPrice(Article) * VAT/ 100;
         }
 
-        int CalculatePriceNDS()
+        public int CalculatePriceVAT()
         {
-            return Storage.FindOutPrice(Article) * Quantity + CalculateNDS();
+            return Storage.FindPrice(Article) * Quantity + CalculateVAT();
         }
-        int CalculatePrice()
+        public int CalculatePrice()
         {
-            return Storage.FindOutPrice(Article) * Quantity;
+            return Storage.FindPrice(Article) * Quantity;
         }
 
-        public void ShowPriceNDS()
+
+
+
+        /*public void ShowPriceVAT()
         {
-            Console.WriteLine($"Your order: {Storage.FindOutPrice(Article)}. " +
-                $"Quantity: {Quantity}. Total: {CalculatePriceNDS()}.");
+            Console.WriteLine($"Your order: {Storage.FindPrice(Article)}. " +
+                $"Quantity: {Quantity}. Total: {CalculatePriceVAT()}.");
         }
         public void ShowPrice()
         {
-            Console.WriteLine($"Your order: {Storage.FindOutPrice(Article)}. " +
-                $"Quantity: {Quantity}. Total no NDS: {CalculatePrice()}.");
+            Console.WriteLine($"Your order: {Storage.FindPrice(Article)}. " +
+                $"Quantity: {Quantity}. Total no VAT: {CalculatePrice()}.");
         }
+        */
     }
 }

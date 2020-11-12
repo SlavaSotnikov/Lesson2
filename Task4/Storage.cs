@@ -3,7 +3,7 @@ namespace Task4
 {
     public class Storage
     {
-        public static int FindOutPrice(string article)
+        public static int FindPrice(string article)
         {
             int price;
             switch (article)
